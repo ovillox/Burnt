@@ -46,9 +46,11 @@ xiond config set client node tcp://localhost:${XION_PORT}657
 sed -i -e "s|^node *=.*|node = \"tcp://localhost:${XION_PORT}657\"|" $HOME/.xiond/config/client.toml
 ```
 
-# download genesis and addrbook
+**download genesis and addrbook**
+```
 wget -O $HOME/.xiond/config/genesis.json https://server-5.itrocket.net/testnet/burnt/genesis.json
 wget -O $HOME/.xiond/config/addrbook.json  https://server-5.itrocket.net/testnet/burnt/addrbook.json
+```
 
 # set seeds and peers
 SEEDS="69e1aa5800ffa82615986eac5f99b77c2b8f1ccb@burnt-testnet-seed.itrocket.net:55656"
