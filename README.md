@@ -139,8 +139,10 @@ Create wallet
 xiond keys add $WALLET
 ```
 
-# to restore exexuting wallet, use the following command
+**to restore exexuting wallet, use the following command**
+```
 xiond keys add $WALLET --recover
+```
 
 # save wallet and validator address
 WALLET_ADDRESS=$(xiond keys show $WALLET -a)
