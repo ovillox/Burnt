@@ -187,22 +187,11 @@ while true; do
   sleep 5
 done
 ```
+
 Create validator
-Moniker
-Identity
-Details
-I love blockchain ❤️
-Amount, uxion
-1000000
-Commission rate
-0.1
-Commission max rate
-0.2
-Commission max change rate
-0.01
-Website
-cd $HOME
-# Create validator.json file
+
+**Create validator.json file**
+```
 echo "{\"pubkey\":{\"@type\":\"/cosmos.crypto.ed25519.PubKey\",\"key\":\"$(xiond comet show-validator | grep -Po '\"key\":\s*\"\K[^"]*')\"},
     \"amount\": \"1000000uxion\",
     \"moniker\": \"test\",
@@ -215,6 +204,8 @@ echo "{\"pubkey\":{\"@type\":\"/cosmos.crypto.ed25519.PubKey\",\"key\":\"$(xiond
     \"commission-max-change-rate\": \"0.01\",
     \"min-self-delegation\": \"1\"
 }" > validator.json
+```
+
 # Create a validator using the JSON configuration
 xiond tx staking create-validator validator.json \
     --from $WALLET \
